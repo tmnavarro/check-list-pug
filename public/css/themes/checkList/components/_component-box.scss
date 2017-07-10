@@ -1,0 +1,48 @@
+.component-box {
+  padding: 0;
+  background: #2f3243;
+  min-height: 400px;
+  .title {
+    padding: 10px 20px;
+    display: flex;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    h2 {
+      flex: 0.8;
+      align-self: center;
+      color: #fff;
+      margin: 0;
+      font-size: 22px;
+      font-weight: 800;
+      small {
+        font-size: 16px;
+        display: block;
+      }
+    }
+    .actions {
+      align-items: center;
+      justify-content: flex-end;
+      flex: 0.2;
+      display: flex;
+      text-align: right;
+      button {
+        border: 1px solid #1a9af5;
+        background: none;
+        color: #1a9af5;
+        cursor: pointer;
+        font-weight: lighter;
+        padding: 5px 10px;
+        border-radius: 5px;
+        &.active {
+          border: 1px solid #dca029;
+          color: #dca029;
+        }
+        .fa {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .content {
+    padding: 20px;
+  }
+}

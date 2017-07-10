@@ -1,0 +1,61 @@
+.list-itens {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  .linha {
+    flex: 1;
+    display: flex;
+    color: #fff;
+    background: rgba(0,0,0,0.4);
+    height: 60px;
+    align-items: center;
+    border-radius: 5px;
+    border-left: 3px solid #1a9af5;
+    &:hover {
+      transition: .6s;
+      background: rgba(0,0,0,0.6);
+    }
+    &.list-title {
+      background: none;
+      margin-bottom: 10px;
+      height: auto;
+      border: none;
+    }
+    .item {
+      flex: 1;
+      display: flex;
+      strong, span, button {
+        flex: 1;
+        display: block;
+        text-align: center;
+      }
+      strong {
+        font-weight: lighter;
+      }
+      button {
+        margin: 0 10px;
+        border: none;
+        .fa {
+          font-size: 20px;
+        }
+        &.edit {
+          background: none;
+          color: #1a9af5;
+          opacity: 0.4;
+          &:hover {
+            transition: .6s;
+            opacity: 1;
+          }
+        }
+        &.remove {
+          background: none;
+          color: rgba(255,255,255,0.4);
+          &:hover {
+            transition: .6s;
+            color: rgba(255,255,255,1);
+          }
+        }
+      }
+    }
+  }
+}

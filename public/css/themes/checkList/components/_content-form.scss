@@ -1,0 +1,61 @@
+.content-form {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255, 0);
+  overflow: hidden;
+  max-height: 0;
+  .form {
+    transform: translateY(500px);
+  }
+  &.disable {
+    border-bottom: 1px solid rgba(255,255,255, 0);
+    transition: 0.6s;
+    //transition-delay: 1s;
+    max-height: 0;
+    .form {
+      transform: translateY(500px);
+      transition: 1s;
+    }
+  }
+  &.active {
+    transition: 0.6s;
+    height: auto;
+    max-height: inherit;
+    border-bottom: 1px solid rgba(255,255,255, 0.1);
+    .form {
+      transform: translateY(0);
+      transition: 1s;
+      transition-delay: 0.3s;
+    }
+  }
+  .danger {
+    font-size: 12px;
+    color: #c76a2f;
+    position: absolute;
+  }
+  label {
+    color: #fff;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: none;
+    color: #fff;
+    font-weight: lighter;
+    box-shadow: none;
+    &:active, &:focus {
+      box-shadow: none;
+    }
+  }
+
+  button {
+    background: none;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: #fff;
+    &:hover {
+      transition: .6s;
+    }
+  }
+}

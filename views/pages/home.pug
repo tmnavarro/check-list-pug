@@ -1,0 +1,55 @@
+
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-sm-12
+        .component-box
+          .title
+            h2 Minhas Listas
+            .actions
+              button.addList
+                .fa.fa-plus-circle
+                | Criar nova lista
+          #addList.content-form
+            .form
+              input#csrf(type='hidden', name='_csrf', value=_csrf)
+              .row
+                .col-md-6
+                  .form-group
+                    label(for='name') Nome
+                    input#name.form-control
+                .col-md-6
+                  .form-group
+                    label(for='description') Descrição
+                    input#description.form-control
+              .row
+                .col-sm-12.text-right
+                  button#btnCreateList.btn.btn-default Criar agora!
+          .content
+            .list-itens
+              .linha.list-title
+                .item
+                  strong Nome
+                .item
+                  strong Data
+                .item
+                  strong Itens
+                .item
+                  strong Editar
+                .item
+                  strong Excluir
+              .linha
+                .item
+                  span Minha lista de compras
+                .item
+                  span 10/02/2017
+                .item
+                  span 40
+                .item
+                  button.edit
+                    .fa.fa-edit
+                .item
+                  button.remove
+                    .fa.fa-trash
