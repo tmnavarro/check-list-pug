@@ -33,12 +33,13 @@ include form-editList
           each item in list.itens
             - count++;
           span #{count}
-        .item
-          button.visit-list(data-id=list._id)
-            .fa.fa-eye
-        .item
-          button.edit-list(data-id=list._id)
-            .fa.fa-edit
-        .item
-          button.remove-list(data-id=list._id)
-            .fa.fa-trash
+        .buttons
+          .item
+            button.visit-list(data-id=list._id)
+              .fa.fa-eye
+          .item
+            button.edit-list(data-id=list._id)
+              .fa.fa-edit
+          .item
+            button.remove-list(data-id=list._id)
+              .fa.fa-trash

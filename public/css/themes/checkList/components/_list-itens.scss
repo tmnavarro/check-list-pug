@@ -3,20 +3,39 @@
   display: flex;
   flex-direction: column;
   .linha {
+    padding: 15px 10px;
     flex: 1;
     display: flex;
     margin-bottom: 10px;
     color: #fff;
     background: rgba(0,0,0,0.4);
-    height: 60px;
     align-items: center;
     border-radius: 5px;
     border-left: 3px solid #1a9af5;
+    .buttons {
+      flex: 3;
+      display: flex;
+      .item {
+        flex: 1;
+      }
+    }
+    @media (max-width: 768px) {
+      flex-direction: column;
+      .buttons {
+        margin-top: 10px;
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+      }
+    }
     &:hover {
       transition: .6s;
       background: rgba(0,0,0,0.6);
     }
     &.list-title {
+      @media (max-width: 768px) {
+        display: none
+      }
       background: none;
       margin-bottom: 10px;
       height: auto;
@@ -25,6 +44,7 @@
     .item {
       flex: 1;
       display: flex;
+
       strong, span, button {
         flex: 1;
         display: block;

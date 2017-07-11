@@ -7,7 +7,7 @@
     transition: 1s;
     position: absolute;
     top: 0;
-    transform: translateX(-1000px);
+    transform: translateX(-2000px);
   }
   &.active {
     &.part-2 {
@@ -21,7 +21,7 @@
   }
   &.disable {
     transition: 1s;
-    transform: translateX(-1000px);
+    transform: translateX(-2000px);
   }
   .title {
     padding: 10px 20px;
@@ -32,7 +32,7 @@
       cursor: pointer;
     }
     h2 {
-      flex: 0.8;
+      flex: 0.6;
       align-self: center;
       color: #fff;
       margin: 0;
@@ -46,7 +46,7 @@
     .actions {
       align-items: center;
       justify-content: flex-end;
-      flex: 0.2;
+      flex: 0.4;
       display: flex;
       text-align: right;
       button {

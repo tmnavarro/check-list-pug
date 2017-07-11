@@ -23,25 +23,19 @@ $(document).ready(function() {
    * Abre/Fecha formulário para add lista
    * ---------------------------------------
   */
-  function openAddList() {
-    $(this).addClass('active');
-    $(this).find('.fa').addClass('fa-minus-circle').removeClass('fa-plus-circle');
-    $('#addList').addClass('active').removeClass('disable');
-  }
 
-  function closeAddList() {
-    $(this).removeClass('active');
-    $(this).find('.fa').addClass('fa-plus-circle').removeClass('fa-minus-circle');
-    $('#addList').addClass('disable').removeClass('active');
-  }
   $(document).on('click', '.addList', function() {
     //  Abre forumário
     if (!$(this).hasClass('active')) {
-      openAddList();
+      $(this).addClass('active');
+      $(this).find('.fa').addClass('fa-minus-circle').removeClass('fa-plus-circle');
+      $('#addList').addClass('active').removeClass('disable');
     }
     // Fecha formulário
     else {
-      closeAddList();
+      $(this).removeClass('active');
+      $(this).find('.fa').addClass('fa-plus-circle').removeClass('fa-minus-circle');
+      $('#addList').addClass('disable').removeClass('active');
     }
   });
 
@@ -106,7 +100,10 @@ $(document).ready(function() {
         success: function (lists) {
           createListItem(lists);
           clearListItem();
-          closeAddList();
+
+          $(this).removeClass('active');
+          $(this).find('.fa').addClass('fa-plus-circle').removeClass('fa-minus-circle');
+          $('#addList').addClass('disable').removeClass('active');
         },
         error: function (error) {
             console.log(error);
