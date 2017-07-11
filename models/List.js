@@ -7,7 +7,8 @@ const listSchema = new mongoose.Schema({
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Item'
             },
-            checked: { type: Boolean, default: false }
+            checked: { type: Boolean, default: false },
+            qtd: { type: Number, default: 1 },
           }],
 }, { timestamps: true });
 

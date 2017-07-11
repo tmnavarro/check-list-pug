@@ -1,0 +1,16 @@
+h3 Repositório de itens
+.list-itens.repositorio-items
+  each item, index in itens
+    .linha
+      .item
+        .checkbox
+          label
+            input(type="checkbox", check)
+      .item
+        strong #{item.name}
+      .item
+        strong R$#{item.price}
+      .buttons
+        .item
+          button.add-item-list(data-id=item._id)
+            .fa.fa-plus-circle

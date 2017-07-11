@@ -2,7 +2,7 @@
 # Lista de Compras
 
 To-do list para compras de supermercado.
-
+DEMO: https://check-list-pug.herokuapp.com/
 
 ## Starter Usado
 

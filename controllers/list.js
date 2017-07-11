@@ -23,9 +23,16 @@ exports.getLists = (req, res) => {
      if (err) {
        res.status(500).end();
      }
-     res.render('partials/component-list', {
-       list
+     Item.find({}, function(err, itens){
+       if (err) {
+         res.status(500).end();
+       }
+       res.render('partials/component-list', {
+         list,
+         itens
+       });
      });
+
    });
  };
 

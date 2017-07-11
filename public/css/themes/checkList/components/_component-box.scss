@@ -4,7 +4,7 @@
   height: 80vh;
   transform: translateX(0);
   overflow-y: auto;
-  
+
   &.part-2 {
     transition: 1s;
     position: absolute;
@@ -24,6 +24,12 @@
   &.disable {
     transition: 1s;
     transform: translateX(-2000px);
+  }
+  h3 {
+    color: #fff;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.6);
   }
   .title {
     padding: 10px 20px;
