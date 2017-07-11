@@ -26,5 +26,5 @@ npm install
 mongod
 
 # Inicio projeto
-npm install
+npm start
 ```
