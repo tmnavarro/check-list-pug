@@ -1,9 +1,17 @@
+const List = require('../models/List');
+
 /**
  * GET /
  * Home page.
  */
 exports.index = (req, res) => {
-  res.render('pages/home', {
-    title: 'Home'
+  List.find({}).sort('-createdAt').exec(function(err, lists) {
+    if (err) {
+      return next(err);
+    }
+    res.render('pages/home', {
+      lists
+    });
   });
+
 };

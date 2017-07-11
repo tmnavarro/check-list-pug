@@ -5,18 +5,39 @@ const List = require('../models/List');
  * Listagem de com todas listas criadas.
  */
 exports.getLists = (req, res) => {
-  res.json({
-    title: 'Lista de compra'
+  List.find({}).sort('-createdAt').exec(function(err, lists) {
+    if (err) {
+      res.status(500).end();
+    }
+    res.json(lists);
   });
 };
+
+/**
+ * GET /templateList/:id
+ * Amostra de lista única
+ */
+ exports.getTemplateList = (req, res) => {
+   List.findById(req.params.id, function(err, list) {
+     if (err) {
+       res.status(500).end();
+     }
+     res.render('partials/component-list', {
+       list
+     });
+   });
+ };
 
 /**
  * GET /list/:id
  * Amostra de lista única
  */
 exports.getList = (req, res) => {
-  res.json({
-    title: 'Lista de compra'
+  List.findById(req.params.id, function(err, list) {
+    if (err) {
+      res.status(500).end();
+    }
+    res.json(list);
   });
 };
 
@@ -33,7 +54,7 @@ exports.postList = (req, res) => {
 
   list.save((err, list) => {
       if (err) {
-        return next(err);
+        res.status(500).end();
       } else {
         res.json(list);
       }
@@ -45,9 +66,22 @@ exports.postList = (req, res) => {
  * Updade list
  */
 exports.updadeList = (req, res) => {
-  res.json({
-    title: 'Lista de compra'
+  List.findById(req.params.id, function(err, list) {
+    if (err) {
+      res.status(500).end();
+    }
+    list.name = req.body.name;
+    list.description = req.body.description;
+
+    list.save((err, list) => {
+        if (err) {
+          res.status(500).end();
+        } else {
+          res.json(list);
+        }
+      });
   });
+
 };
 
 /**
@@ -55,7 +89,8 @@ exports.updadeList = (req, res) => {
  * Remove lista
  */
 exports.deleteList = (req, res) => {
-  res.json({
-    title: 'Lista de compra'
+  List.findById(req.params.id, function (err, list) {
+    list.remove();
+    res.status(200).end;
   });
 };

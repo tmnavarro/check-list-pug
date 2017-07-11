@@ -136,10 +136,11 @@ app.get('/', homeController.index);
  * Api check-lists
  */
 app.get('/lists', listController.getLists);
+app.get('/templateLists/:id', listController.getTemplateList);
 app.get('/list/:id', listController.getList);
 app.post('/list', listController.postList);
 app.put('/list/:id', listController.updadeList);
-app.delete('/list/:id', listController.getList);
+app.delete('/list/:id', listController.deleteList);
 
 app.get('/item/:id', itemController.getItem);
 app.post('/item', itemController.postItem);

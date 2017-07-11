@@ -9,7 +9,6 @@
   &.disable {
     border-bottom: 1px solid rgba(255,255,255, 0);
     transition: 0.6s;
-    //transition-delay: 1s;
     max-height: 0;
     .form {
       transform: translateY(500px);
@@ -53,6 +52,7 @@
     background: none;
     border-radius: 5px;
     border: 1px solid #fff;
+    margin-left: 10px;
     color: #fff;
     &:hover {
       transition: .6s;

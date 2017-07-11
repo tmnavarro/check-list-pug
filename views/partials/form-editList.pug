@@ -1,0 +1,17 @@
+#upList.content-form
+  .form
+    input#csrf(type='hidden', name='_csrf', value=_csrf)
+    input#idList(type='hidden')
+    .row
+      .col-md-6
+        .form-group
+          label(for='name') Nome
+          input#name.form-control
+      .col-md-6
+        .form-group
+          label(for='description') Descrição
+          input#description.form-control
+    .row
+      .col-sm-12.text-right
+        button#cancelUpdadeList.btn.btn-danger Cancelar
+        button#btnUpdadeList.btn.btn-default Salvar Alterações

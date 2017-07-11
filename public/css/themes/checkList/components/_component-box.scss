@@ -2,10 +2,35 @@
   padding: 0;
   background: #2f3243;
   min-height: 400px;
+  transform: translateX(0);
+  &.part-2 {
+    transition: 1s;
+    position: absolute;
+    top: 0;
+    transform: translateX(-1000px);
+  }
+  &.active {
+    &.part-2 {
+      transition: 1s;
+      position: absolute;
+      top: 0;
+      transform: translateX(0);
+      z-index: 9999;
+      width: 100%;
+    }
+  }
+  &.disable {
+    transition: 1s;
+    transform: translateX(-1000px);
+  }
   .title {
     padding: 10px 20px;
     display: flex;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    #backList {
+      margin-right: 10px;
+      cursor: pointer;
+    }
     h2 {
       flex: 0.8;
       align-self: center;

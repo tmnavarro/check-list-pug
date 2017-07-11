@@ -1,0 +1,44 @@
+.title
+  h2 Minhas Listas
+  .actions
+    button.addList
+      .fa.fa-plus-circle
+      | Criar nova lista
+include form-addList
+include form-editList
+.content
+  .list-itens
+    .linha.list-title
+      .item
+        strong Nome
+      .item
+        strong Data
+      .item
+        strong N/Itens
+      .item
+        strong Visualizar
+      .item
+        strong Editar
+      .item
+        strong Excluir
+
+    each list, index in lists
+      .linha
+        .item
+          span #{list.name}
+        .item
+          span #{prettyDate(list.createdAt)}
+        .item
+          - var count = 0;
+          each item in list.itens
+            - count++;
+          span #{count}
+        .item
+          button.visit-list(data-id=list._id)
+            .fa.fa-eye
+        .item
+          button.edit-list(data-id=list._id)
+            .fa.fa-edit
+        .item
+          button.remove-list(data-id=list._id)
+            .fa.fa-trash

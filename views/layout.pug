@@ -11,6 +11,7 @@ html
     link(rel='stylesheet', href='/css/main.css')
 
   body
+    include functions/dateFormate
     include partials/header
     .cotent-geral
       block content
@@ -20,6 +21,7 @@ html
     script(src='/js/lib/bootstrap.min.js')
     script(src='/js/main.js')
     script(src='/js/components/lists.js')
+    script(src='/js/components/list.js')
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID
     script.

@@ -5,6 +5,7 @@
   .linha {
     flex: 1;
     display: flex;
+    margin-bottom: 10px;
     color: #fff;
     background: rgba(0,0,0,0.4);
     height: 60px;
@@ -38,7 +39,8 @@
         .fa {
           font-size: 20px;
         }
-        &.edit {
+        &.edit-list,
+        &.visit-list {
           background: none;
           color: #1a9af5;
           opacity: 0.4;
@@ -47,7 +49,7 @@
             opacity: 1;
           }
         }
-        &.remove {
+        &.remove-list {
           background: none;
           color: rgba(255,255,255,0.4);
           &:hover {
