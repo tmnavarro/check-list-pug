@@ -44,7 +44,7 @@ exports.postItem = (req, res) => {
               if (err) {
                 res.status(500).end();
               } else {
-                res.json(list);
+                res.json(item);
               }
             });
         });
@@ -61,6 +61,7 @@ exports.updateItem = (req, res) => {
     title: 'Lista de compra'
   });
 };
+
 
 /**
  * DELETE /item/:id

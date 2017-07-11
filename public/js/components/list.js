@@ -29,7 +29,7 @@ $(document).ready(function() {
   });
 
   /**
-   * Salvar Nova Item
+   * Salvar Novo Item
    * ---------------------------------------
   */
   function createListItem(data) {
@@ -38,9 +38,9 @@ $(document).ready(function() {
                   <div class="checkbox">
                     <label><input type="checkbox" value=""></label></div></div>
                   <div class="item">
-                    <strong>Sabão</strong></div>
+                    <strong>${data.name}</strong></div>
                   <div class="item">
-                    <strong>${data.price}</strong></div>
+                    <strong>R$${data.price}</strong></div>
                   <div class="buttons">
                     <div class="item">
                       <button class="edit-item" data-id="${data.id}">
@@ -64,7 +64,6 @@ $(document).ready(function() {
   }
 
   $(document).on('click', '#btnCreateItem', function() {
-
     if (validate($('#addItem #name'), '')) {
       return false;
     }
@@ -95,6 +94,55 @@ $(document).ready(function() {
         },
         data: itemInfo
     });
+  });
+
+  /**
+   * Checked Item list
+   * ---------------------------------------
+  */
+  var obj = document.createElement("audio");
+      obj.src= window.location.href + "sounds/toasty.mp3";
+      obj.volume=0.60;
+      obj.autoPlay=false;
+      obj.preLoad=true;
+
+  function upiii() {
+    $('.upii').addClass('active');
+    setTimeout(function() {
+      $('.upii').removeClass('active')
+    }, 1000);
+    obj.play();
+  }
+  $(document).on('click', '.checkbox', function(){
+    var self = $(this);
+    var id = self.data('id');
+
+    if($(this).hasClass('checked')) {
+
+      $.ajax({
+          url: '/itemdescheck/' + id,
+          type: 'put',
+          success: function (lists) {
+            self.removeClass('checked');
+          },
+          error: function (error) {
+              console.log(error);
+          },
+      });
+    } else {
+      $.ajax({
+          url: '/itemcheck/' + id,
+          type: 'put',
+          success: function (lists) {
+            upiii();
+            self.addClass('checked');
+          },
+          error: function (error) {
+              console.log(error);
+          },
+      });
+
+    }
   });
 
 });

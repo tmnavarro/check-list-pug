@@ -118,8 +118,7 @@ $(document).ready(function() {
           url: '/list/'+id,
           type: 'delete',
           success: function (list) {
-            console.log(list);
-            $('[data-id="'+id+'"]').parents().eq(3).hide();
+            $('[data-id="'+id+'"]').parents().eq(4).hide();
           },
           error: function (error) {
             console.log('erro' + error);

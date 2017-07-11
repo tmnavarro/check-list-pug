@@ -140,7 +140,10 @@ app.get('/templateLists/:id', listController.getTemplateList);
 app.get('/list/:id', listController.getList);
 app.post('/list', listController.postList);
 app.put('/list/:id', listController.updadeList);
+app.put('/itemcheck/:id', listController.itemcheck); // id item da lista
+app.put('/itemdescheck/:id', listController.itemDescheck); // id item da lista
 app.delete('/list/:id', listController.deleteList);
+
 
 app.get('/item/:id', itemController.getItem);
 app.post('/item/:id', itemController.postItem);

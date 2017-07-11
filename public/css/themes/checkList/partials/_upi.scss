@@ -1,0 +1,25 @@
+.upii {
+  position: fixed;
+  right: -200px;
+  bottom: 0;
+  width: 200px;
+  z-index: 9999;
+  img {
+    width: 100%;
+  }
+  &.active {
+    animation: upii 1s;
+  }
+}
+
+@keyframes upii {
+  0% {
+    right: -200px;
+  }
+  50% {
+    right: 0px;
+  }
+  100% {
+    right: -200px;
+  }
+}

@@ -1,8 +1,7 @@
 h3 Itens da lista
 .list-itens.check-list
   .linha.list-title
-    .item
-      strong
+    .item.marcador
     .item
       strong Nome
     .item
@@ -12,19 +11,19 @@ h3 Itens da lista
     .item
       strong Remover
   each item, index in list.itens
+    - var checked = item.checked ? 'checked' : '';
     .linha
-      .item
-        .checkbox
-          label
-            input(type="checkbox", check)
+      .item.marcador
+        .checkbox(data-id=item._id, class=checked)
+          i.fa.fa-check
       .item
         strong #{item.itemRefe.name}
       .item
         strong R$#{item.itemRefe.price}
       .buttons
         .item
-          button.edit-item(data-id=item.itemRefe._id)
+          button.action.edit-item(data-id=item.itemRefe._id)
             .fa.fa-edit
         .item
-          button.remove-item(data-id=item.itemRefe._id)
+          button.remove.remove-item(data-id=item.itemRefe._id)
             .fa.fa-trash

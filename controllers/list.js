@@ -102,3 +102,60 @@ exports.deleteList = (req, res) => {
     res.json({ message: 'Lista removida com sucesso!' })
   });
 };
+
+/**
+ * DELETE /list/:id
+ * Remove lista
+ */
+exports.addItemList = (req, res) => {
+  List.findById(req.params.id, function (err, list) {
+    if (err) {
+      res.status(500).json({ message: 'Erro ao salvar Lista' });
+    }
+
+    list.itens.push({
+      itemRefe: req.body.id,
+      checked: false
+    });
+
+    list.save((err, list) => {
+        if (err) {
+          res.status(500).end();
+        } else {
+          res.json(list);
+        }
+      });
+  });
+};
+
+/**
+ * PUT /itemcheck/:id
+ * Updade Item.checked
+ */
+exports.itemcheck = (req, res) => {
+  List.update({'itens._id': req.params.id}, {'$set': {
+    'itens.$.checked': true,
+  }}, function(err, list) {
+    if (err) {
+      res.status(500).json(err).end();
+    } else {
+      res.json(list);
+    }
+  });
+}
+
+/**
+ * PUT /itemcheck/:id
+ * Updade Item.checked
+ */
+exports.itemDescheck = (req, res) => {
+  List.update({'itens._id': req.params.id}, {'$set': {
+    'itens.$.checked': false,
+  }}, function(err, list) {
+    if (err) {
+      res.status(500).json(err).end();
+    } else {
+      res.json(list);
+    }
+  });
+}
