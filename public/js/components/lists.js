@@ -81,8 +81,8 @@ $(document).ready(function() {
           createListItem(lists);
           clearListItem();
 
-          $(this).removeClass('active');
-          $(this).find('.fa').addClass('fa-plus-circle').removeClass('fa-minus-circle');
+          $('.addList').removeClass('active');
+          $('.addList').find('.fa').addClass('fa-plus-circle').removeClass('fa-minus-circle');
           $('#addList').addClass('disable').removeClass('active');
         },
         error: function (error) {
@@ -111,24 +111,21 @@ $(document).ready(function() {
    * ---------------------------------------
   */
   $(document).on('click', '.remove-list', function(){
-    var elem = $(this);
     var id = $(this).data('id');
 
-    if (!window.confirm('Deseja realmente apagar esta lista?')) {
-      return false;
-    }
-
-    $.ajax({
-        url: '/list/'+id,
-        type: 'delete',
-        success: function (list) {
-          console.log(list);
-          $(elem).parents().eq(1).hide();
-        },
-        error: function (error) {
+    if (window.confirm('Deseja realmente apagar esta lista?')) {
+      $.ajax({
+          url: '/list/'+id,
+          type: 'delete',
+          success: function (list) {
+            console.log(list);
+            $('[data-id="'+id+'"]').parents().eq(3).hide();
+          },
+          error: function (error) {
             console.log('erro' + error);
-        },
-    });
+          },
+      });
+    }
   });
 
   /**

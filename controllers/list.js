@@ -99,6 +99,6 @@ exports.updadeList = (req, res) => {
 exports.deleteList = (req, res) => {
   List.findById(req.params.id, function (err, list) {
     list.remove();
-    res.status(200).end;
+    res.json({ message: 'Lista removida com sucesso!' })
   });
 };
