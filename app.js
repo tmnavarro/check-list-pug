@@ -143,7 +143,7 @@ app.put('/list/:id', listController.updadeList);
 app.delete('/list/:id', listController.deleteList);
 
 app.get('/item/:id', itemController.getItem);
-app.post('/item', itemController.postItem);
+app.post('/item/:id', itemController.postItem);
 app.put('/item/:id', itemController.updateItem);
 app.delete('/item/:id', itemController.deleteItem);
 

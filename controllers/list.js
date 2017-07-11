@@ -1,4 +1,5 @@
 const List = require('../models/List');
+const Item = require('../models/Item');
 
 /**
  * GET /lists
@@ -18,7 +19,7 @@ exports.getLists = (req, res) => {
  * Amostra de lista única
  */
  exports.getTemplateList = (req, res) => {
-   List.findById(req.params.id, function(err, list) {
+   List.findById(req.params.id).populate('itens.itemRefe').exec(function(err, list) {
      if (err) {
        res.status(500).end();
      }
@@ -33,7 +34,7 @@ exports.getLists = (req, res) => {
  * Amostra de lista única
  */
 exports.getList = (req, res) => {
-  List.findById(req.params.id, function(err, list) {
+  List.findById(req.params.id).populate('itens.itemRefe').exec(function(err, list) {
     if (err) {
       res.status(500).end();
     }

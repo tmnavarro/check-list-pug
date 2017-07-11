@@ -1,8 +1,10 @@
 .component-box {
   padding: 0;
   background: #2f3243;
-  min-height: 400px;
+  height: 80vh;
   transform: translateX(0);
+  overflow-y: auto;
+  
   &.part-2 {
     transition: 1s;
     position: absolute;
@@ -15,7 +17,7 @@
       position: absolute;
       top: 0;
       transform: translateX(0);
-      z-index: 9999;
+      z-index: 99;
       width: 100%;
     }
   }

@@ -1,0 +1,29 @@
+.list-itens.check-list
+  .linha.list-title
+    .item
+      strong
+    .item
+      strong Nome
+    .item
+      strong Preço
+    .item
+      strong Editar
+    .item
+      strong Remover
+  each item, index in list.itens
+    .linha
+      .item
+        .checkbox
+          label
+            input(type="checkbox", check)
+      .item
+        strong #{item.itemRefe.name}
+      .item
+        strong R$#{item.itemRefe.price}
+      .buttons
+        .item
+          button.edit-item(data-id=item.itemRefe._id)
+            .fa.fa-edit
+        .item
+          button.remove-item(data-id=item.itemRefe._id)
+            .fa.fa-trash

@@ -6,9 +6,11 @@
     button.addItem
       .fa.fa-plus-circle
       | Novo item
+include form-addItem
+include form-editItem
 .content
   .row
-    .col-md-6
-      .check-list
-    .col-md-6
-      .repositorio-items
+    .col-md-7
+      include check-list
+    .col-md-5
+      include repositorio-items

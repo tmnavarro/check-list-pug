@@ -1,0 +1,23 @@
+#addItem.content-form
+  .form
+    input#idList(type='hidden', value=list._id)
+    .row
+      .col-md-6
+        .form-group
+          label(for='urlImg') Image
+          input#urlImg.form-control
+      .col-md-6
+        .form-group
+          label(for='name') Nome
+          input#name.form-control
+      .col-md-6
+        .form-group
+          label(for='description') Descrição
+          input#description.form-control
+      .col-md-6
+        .form-group
+          label(for='price') Preço
+          input#price.form-control
+    .row
+      .col-sm-12.text-right
+        button#btnCreateItem.btn.btn-default Criar agora!
